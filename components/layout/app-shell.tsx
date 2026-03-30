@@ -3,7 +3,7 @@ import { TopNav } from "./top-nav";
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative flex min-h-screen flex-col">
       <div
         className="pointer-events-none fixed inset-0 -z-10"
         style={{
@@ -20,9 +20,14 @@ export function AppShell({ children }: { children: ReactNode }) {
         }}
       />
       <TopNav />
-      <main className="mx-auto max-w-7xl px-4 pb-24 pt-[5.5rem] sm:px-6 sm:pb-28 sm:pt-[5.75rem] lg:px-10 lg:pb-32">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-4 pb-16 pt-[5.5rem] sm:px-6 sm:pb-20 sm:pt-[5.75rem] lg:px-10 lg:pb-24">
         {children}
       </main>
+      <footer className="mx-auto w-full max-w-7xl border-t border-white/[0.06] px-4 py-8 sm:px-6 lg:px-10">
+        <p className="text-center text-xs leading-relaxed text-slate-500 sm:text-left">
+          © 2026 Abigail Bales. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
