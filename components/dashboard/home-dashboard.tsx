@@ -67,7 +67,7 @@ export function HomeDashboard() {
   }, [transactions]);
 
   return (
-    <div className="space-y-8 sm:space-y-10 lg:space-y-12">
+    <div className="space-y-9 sm:space-y-11 lg:space-y-14">
       {/* Row 1 — Hero + metric stack */}
       <div className="grid gap-5 lg:grid-cols-12 lg:gap-6">
         <GlassCard
@@ -96,10 +96,10 @@ export function HomeDashboard() {
                     ORB-01
                   </Badge>
                 </div>
-                <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                <h1 className="text-[1.75rem] font-semibold leading-tight tracking-tight text-white sm:text-3xl md:text-[2.125rem]">
                   Operating balance
                 </h1>
-                <p className="max-w-md text-sm leading-relaxed text-slate-500">
+                <p className="max-w-md text-[0.9375rem] leading-relaxed text-slate-500 sm:text-base">
                   Aggregated from your local transaction graph — no cloud sync.
                 </p>
               </div>
@@ -177,7 +177,7 @@ export function HomeDashboard() {
       </div>
 
       {/* Row 2 — Timeline + Budget zone */}
-      <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-8">
+      <div className="grid items-start gap-7 lg:grid-cols-12 lg:gap-9">
         <div className="lg:col-span-5">
           <SectionHeader
             eyebrow="Event stream"
@@ -187,7 +187,7 @@ export function HomeDashboard() {
             actions={
               <Link
                 href="/transactions"
-                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 hover:text-teal-300"
+                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 transition-colors duration-200 hover:text-teal-300"
               >
                 Open ledger
                 <ArrowUpRight className="h-4 w-4" />
@@ -259,7 +259,7 @@ export function HomeDashboard() {
             actions={
               <Link
                 href="/budgets"
-                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 hover:text-teal-300"
+                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 transition-colors duration-200 hover:text-teal-300"
               >
                 Mesh detail
                 <ArrowRight className="h-4 w-4" />
@@ -275,10 +275,8 @@ export function HomeDashboard() {
                   key={b.id}
                   glow={i % 2 === 0 ? "teal" : "indigo"}
                   padding="md"
-                  className={cn(
-                    "transition-transform duration-300 hover:-translate-y-0.5",
-                    over && "ring-1 ring-rose-400/25"
-                  )}
+                  interactive
+                  className={cn(over && "ring-1 ring-rose-400/25")}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <p className="font-medium text-white">{b.category}</p>
@@ -315,7 +313,7 @@ export function HomeDashboard() {
       </div>
 
       {/* Row 3 — Goals + Insights */}
-      <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
+      <div className="grid gap-7 lg:grid-cols-12 lg:gap-9">
         <div className="lg:col-span-8">
           <SectionHeader
             eyebrow="Trajectory"
@@ -325,7 +323,7 @@ export function HomeDashboard() {
             actions={
               <Link
                 href="/goals"
-                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 hover:text-teal-300"
+                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 transition-colors duration-200 hover:text-teal-300"
               >
                 All vectors
                 <ArrowRight className="h-4 w-4" />
@@ -339,6 +337,7 @@ export function HomeDashboard() {
                 <GlassCard
                   key={g.id}
                   padding="md"
+                  interactive
                   className="overflow-hidden border-white/[0.08]"
                   style={{
                     boxShadow: `inset 0 0 0 1px ${g.color}22`,
@@ -370,7 +369,7 @@ export function HomeDashboard() {
                   </p>
                   <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
                     <div
-                      className="h-full rounded-full opacity-90"
+                      className="h-full rounded-full opacity-90 transition-[width] duration-500 ease-out"
                       style={{
                         width: `${pct}%`,
                         backgroundColor: g.color,
@@ -395,7 +394,7 @@ export function HomeDashboard() {
             actions={
               <Link
                 href="/insights"
-                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 hover:text-teal-300"
+                className="inline-flex items-center gap-1 text-sm font-medium text-teal-400/90 transition-colors duration-200 hover:text-teal-300"
               >
                 Queue
                 <ArrowRight className="h-4 w-4" />
@@ -407,7 +406,7 @@ export function HomeDashboard() {
               <div
                 key={item.id}
                 className={cn(
-                  "rounded-3xl border p-4 backdrop-blur-md transition hover:-translate-y-0.5",
+                  "rounded-3xl border p-4 backdrop-blur-md transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-0.5",
                   insightToneStyles(item.tone)
                 )}
               >

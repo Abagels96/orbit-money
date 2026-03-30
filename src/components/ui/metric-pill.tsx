@@ -34,6 +34,8 @@ export function MetricPill({
     <div
       className={cn(
         "inline-flex min-w-[8rem] max-w-full flex-col gap-1 rounded-3xl border px-4 py-3",
+        "motion-safe:transition-[box-shadow,border-color,transform] motion-safe:duration-300 motion-safe:ease-out",
+        "hover:-translate-y-px hover:shadow-[0_12px_36px_-16px_rgba(0,0,0,0.45)]",
         toneClasses[tone],
         className
       )}

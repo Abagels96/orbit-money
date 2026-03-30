@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
-import { InsightsFeed } from "@/components/insights/insights-feed";
+import { InsightsView } from "@/components/insights/insights-view";
 
 export const metadata: Metadata = {
   title: "Insights",
-  description: "Narrative insights from mock signals.",
+  description:
+    "Flow analytics, category chromatograph, recurring spend, and heuristic signals — all local.",
 };
 
 export default function InsightsPage() {
@@ -12,9 +13,9 @@ export default function InsightsPage() {
     <>
       <PageHeader
         title="Insights"
-        description="Asymmetric cards — copy is static mock content."
+        description="Portfolio-style signal deck: income vs expense flow, category mass, recurring rhythm, and seeded smart narratives. Data from your local ledger only."
       />
-      <InsightsFeed />
+      <InsightsView />
     </>
   );
 }

@@ -109,8 +109,9 @@ function BudgetCard({
     <GlassCard
       glow={glow}
       padding="lg"
+      interactive
       className={cn(
-        "flex flex-col items-stretch gap-6 border-white/[0.08] transition hover:border-white/[0.12]",
+        "flex flex-col items-stretch gap-6 border-white/[0.08]",
         over && "ring-1 ring-rose-400/25"
       )}
     >
@@ -243,7 +244,7 @@ export function BudgetsOverview() {
   const totalRemaining = totalLimit - totalSpent;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 sm:space-y-12">
       <SectionHeader
         eyebrow="Allocation mesh"
         title="Budget zones"
@@ -284,7 +285,7 @@ export function BudgetsOverview() {
         </div>
       </GlassCard>
 
-      <div className="grid gap-6 lg:grid-cols-12">
+      <div className="grid gap-7 lg:grid-cols-12">
         {budgets.map((b, i) => (
           <div
             key={b.id}

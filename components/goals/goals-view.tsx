@@ -57,7 +57,8 @@ function GoalOrbCard({
   return (
     <GlassCard
       padding="lg"
-      className="group relative overflow-hidden border-white/[0.08] transition hover:border-white/[0.12]"
+      interactive
+      className="group relative overflow-hidden border-white/[0.08]"
       style={{
         boxShadow: `inset 0 0 0 1px ${goal.color}28, 0 0 48px -20px ${goal.color}40`,
       }}
@@ -301,7 +302,7 @@ export function GoalsView() {
   return (
     <>
       {sortedGoals.length > 0 ? (
-        <div className="mb-6 flex justify-end">
+        <div className="mb-7 flex justify-end sm:mb-8">
           <Button
             type="button"
             variant="primary"
@@ -314,7 +315,7 @@ export function GoalsView() {
         </div>
       ) : null}
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-7 lg:grid-cols-2">
         {sortedGoals.length === 0 ? (
           <div className="lg:col-span-2">
             <EmptyState

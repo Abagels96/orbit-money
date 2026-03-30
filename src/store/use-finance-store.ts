@@ -11,6 +11,7 @@ import {
   getBudgets,
   getGoals,
   getTransactions,
+  resetAllOrbitData,
   resetBudgets,
   resetGoals,
   resetTransactions,
@@ -130,6 +131,9 @@ export function selectFinanceTotals(
 }
 
 type FinanceActions = {
+  /** Clears local Orbit keys and resets store slices to seed data. */
+  resetDemoData: () => void;
+
   addTransaction: (input: Omit<Transaction, "id"> & { id?: string }) => void;
   updateTransaction: (id: string, patch: Partial<Transaction>) => void;
   deleteTransaction: (id: string) => void;
@@ -150,6 +154,15 @@ export const useFinanceStore = create<FinanceStore>()(
       transactions: transactionsSeed,
       budgets: budgetsSeed,
       goals: goalsSeed,
+
+      resetDemoData: () => {
+        resetAllOrbitData();
+        set({
+          transactions: transactionsSeed.map((t) => ({ ...t })),
+          budgets: budgetsSeed.map((b) => ({ ...b })),
+          goals: goalsSeed.map((g) => ({ ...g })),
+        });
+      },
 
       addTransaction: (input) => {
         const id = input.id ?? newEntityId("tx");

@@ -45,11 +45,11 @@ export function TopNav() {
 
   return (
     <>
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-4 sm:px-5">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-5 sm:pt-4">
         <div
           className={cn(
-            "pointer-events-auto flex w-full max-w-5xl items-center justify-between gap-3 rounded-3xl border border-white/[0.1] bg-[#070a12]/55 px-3 py-2.5 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:gap-4 sm:px-5 sm:py-3",
-            "ring-1 ring-white/[0.05]"
+            "pointer-events-auto flex w-full max-w-7xl items-center justify-between gap-3 rounded-[1.35rem] border border-white/[0.1] bg-[#070a12]/60 px-3 py-2.5 shadow-[0_12px_48px_-16px_rgba(0,0,0,0.72),inset_0_1px_0_0_rgba(255,255,255,0.07)] backdrop-blur-2xl transition-shadow duration-300 ease-out sm:gap-4 sm:px-5 sm:py-3",
+            "ring-1 ring-white/[0.06]"
           )}
         >
           <Link
@@ -57,7 +57,7 @@ export function TopNav() {
             className="group flex shrink-0 items-center gap-2.5 rounded-2xl py-0.5 pr-1"
             onClick={() => setOpen(false)}
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-400/30 to-indigo-500/20 ring-1 ring-white/15 shadow-[0_0_24px_-6px_rgba(45,212,191,0.35)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-400/30 to-indigo-500/20 ring-1 ring-white/15 shadow-[0_0_24px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow] duration-300 ease-out group-hover:shadow-[0_0_32px_-4px_rgba(45,212,191,0.45)] group-hover:ring-white/25">
               <Sparkles className="h-[18px] w-[18px] text-teal-200" aria-hidden />
             </span>
             <span className="hidden flex-col leading-tight sm:flex">
@@ -84,10 +84,10 @@ export function TopNav() {
                   key={href}
                   href={href}
                   className={cn(
-                    "flex items-center gap-1.5 rounded-2xl px-2.5 py-2 text-xs font-medium transition-colors lg:px-3 lg:text-sm",
+                    "flex items-center gap-1.5 rounded-2xl px-2.5 py-2 text-xs font-medium transition-[background-color,color,box-shadow,transform] duration-200 ease-out lg:px-3 lg:text-sm",
                     active
-                      ? "bg-white/[0.1] text-white ring-1 ring-white/15 shadow-[0_0_20px_-8px_rgba(45,212,191,0.35)]"
-                      : "text-slate-400 hover:bg-white/[0.06] hover:text-slate-100"
+                      ? "bg-white/[0.11] text-white ring-1 ring-white/18 shadow-[0_0_24px_-8px_rgba(45,212,191,0.38)]"
+                      : "text-slate-400 hover:bg-white/[0.07] hover:text-slate-100 active:scale-[0.98]"
                   )}
                 >
                   <Icon className="h-4 w-4 shrink-0 opacity-90" aria-hidden />
@@ -100,7 +100,7 @@ export function TopNav() {
           <div className="flex shrink-0 items-center gap-2">
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.1] bg-white/[0.06] text-slate-200 shadow-inner transition hover:bg-white/[0.1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/60 md:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.1] bg-white/[0.06] text-slate-200 shadow-inner transition-[background-color,border-color,transform] duration-200 ease-out hover:border-white/[0.14] hover:bg-white/[0.11] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/60 md:hidden"
               aria-expanded={open}
               aria-controls={menuId}
               aria-label={open ? "Close menu" : "Open menu"}
@@ -129,7 +129,7 @@ export function TopNav() {
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
-            className="absolute left-3 right-3 top-[5.25rem] z-50 max-h-[min(70vh,calc(100vh-6rem))] overflow-y-auto rounded-3xl border border-white/[0.12] bg-[#0a0e16]/92 p-3 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.75)] backdrop-blur-2xl ring-1 ring-white/[0.06]"
+            className="absolute left-3 right-3 top-[5rem] z-50 max-h-[min(72vh,calc(100vh-5.5rem))] overflow-y-auto rounded-[1.35rem] border border-white/[0.12] bg-[#0a0e16]/94 p-2.5 shadow-[0_28px_56px_-16px_rgba(0,0,0,0.78)] backdrop-blur-2xl ring-1 ring-white/[0.07]"
           >
             <nav className="flex flex-col gap-1" aria-label="Mobile primary">
               {links.map(({ href, label, icon: Icon }) => {

@@ -28,7 +28,7 @@ export function TransactionEditClient({ id }: Props) {
       <>
         <Link
           href="/transactions"
-          className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 transition hover:text-teal-300"
+          className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors duration-200 hover:text-teal-300"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden />
           Back to transactions
@@ -39,7 +39,7 @@ export function TransactionEditClient({ id }: Props) {
           action={
             <Link
               href="/transactions"
-              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-gradient-to-b from-teal-400/20 to-teal-500/10 px-5 py-2.5 text-sm font-medium text-teal-50 ring-1 ring-teal-400/30 shadow-[0_0_28px_-6px_rgba(45,212,191,0.35)] transition hover:from-teal-400/30 hover:to-teal-500/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/70"
+              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-gradient-to-b from-teal-400/20 to-teal-500/10 px-5 py-2.5 text-sm font-medium text-teal-50 ring-1 ring-teal-400/30 shadow-[0_0_28px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-px hover:from-teal-400/30 hover:to-teal-500/15 hover:shadow-[0_0_36px_-4px_rgba(45,212,191,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/70 active:scale-[0.98]"
             >
               Back to ledger
             </Link>

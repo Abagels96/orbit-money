@@ -4,7 +4,8 @@ import { SettingsPanels } from "@/components/settings/settings-panels";
 
 export const metadata: Metadata = {
   title: "Settings",
-  description: "Local preferences only.",
+  description:
+    "Local preferences, mock currency & appearance, data reset, and JSON export.",
 };
 
 export default function SettingsPage() {
@@ -12,7 +13,7 @@ export default function SettingsPage() {
     <>
       <PageHeader
         title="Settings"
-        description="Browser-only preferences; no account or cloud sync."
+        description="Fine-tune the Orbit shell — balances, atmosphere, and mock currency. Reset or export what lives in your browser; nothing leaves the device."
       />
       <SettingsPanels />
     </>

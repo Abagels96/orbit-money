@@ -20,28 +20,30 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between",
+        "flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6",
         className
       )}
       {...props}
     >
-      <div className="min-w-0 space-y-1">
+      <div className="min-w-0 space-y-1.5">
         {eyebrow ? (
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-400/85">
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+        <h2 className="text-xl font-semibold leading-snug tracking-tight text-white sm:text-2xl sm:leading-tight">
           {title}
         </h2>
         {description ? (
-          <p className="max-w-xl text-sm leading-relaxed text-slate-500">
+          <p className="max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-[0.9375rem]">
             {description}
           </p>
         ) : null}
       </div>
       {actions ? (
-        <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div>
+        <div className="flex shrink-0 flex-wrap items-center gap-2 sm:justify-end">
+          {actions}
+        </div>
       ) : null}
     </div>
   );
