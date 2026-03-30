@@ -21,9 +21,13 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio demo: dark financial UI, mock data, localStorage preferences.",
+  /**
+   * Favicon: `app/icon.png` (Orbit mark). Avoid shipping a separate `app/favicon.ico`
+   * unless it matches — browsers prefer `/favicon.ico` when present.
+   */
   icons: {
-    icon: [{ url: "/orbit-mark.png", type: "image/png" }],
-    apple: [{ url: "/orbit-mark.png", type: "image/png" }],
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
   },
 };
 
