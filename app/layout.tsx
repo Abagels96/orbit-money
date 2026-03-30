@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio demo: dark financial UI, mock data, localStorage preferences.",
+  icons: {
+    icon: [{ url: "/orbit-mark.png", type: "image/png" }],
+    apple: [{ url: "/orbit-mark.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

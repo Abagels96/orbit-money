@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -10,7 +11,6 @@ import {
   List,
   Menu,
   Settings,
-  Sparkles,
   Wallet,
   X,
 } from "lucide-react";
@@ -57,8 +57,15 @@ export function TopNav() {
             className="group flex shrink-0 items-center gap-2.5 rounded-2xl py-0.5 pr-1"
             onClick={() => setOpen(false)}
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-400/30 to-indigo-500/20 ring-1 ring-white/15 shadow-[0_0_24px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow] duration-300 ease-out group-hover:shadow-[0_0_32px_-4px_rgba(45,212,191,0.45)] group-hover:ring-white/25">
-              <Sparkles className="h-[18px] w-[18px] text-teal-200" aria-hidden />
+            <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-2xl bg-[#070a12] ring-1 ring-white/15 shadow-[0_0_24px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow] duration-300 ease-out group-hover:shadow-[0_0_32px_-4px_rgba(45,212,191,0.45)] group-hover:ring-white/25">
+              <Image
+                src="/orbit-mark.png"
+                alt=""
+                width={40}
+                height={40}
+                className="object-cover"
+                priority
+              />
             </span>
             <span className="hidden flex-col leading-tight sm:flex">
               <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-teal-400/95">
