@@ -14,6 +14,7 @@ import {
   Wallet,
   X,
 } from "lucide-react";
+import { assetBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/cn";
 
 const links = [
@@ -59,7 +60,7 @@ export function TopNav() {
           >
             <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-2xl bg-[#070a12] ring-1 ring-white/15 shadow-[0_0_24px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow] duration-300 ease-out group-hover:shadow-[0_0_32px_-4px_rgba(45,212,191,0.45)] group-hover:ring-white/25">
               <Image
-                src="/orbit-mark.png"
+                src={`${assetBasePath}/orbit-mark.png`}
                 alt=""
                 width={40}
                 height={40}

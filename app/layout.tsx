@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: {
     default: "Orbit Money",
@@ -22,12 +24,11 @@ export const metadata: Metadata = {
   description:
     "Portfolio demo: dark financial UI, mock data, localStorage preferences.",
   /**
-   * Favicon: `app/icon.png` (Orbit mark). Avoid shipping a separate `app/favicon.ico`
-   * unless it matches — browsers prefer `/favicon.ico` when present.
+   * Favicon: `app/icon.png` (Orbit mark). Paths include `NEXT_PUBLIC_BASE_PATH` for GitHub Pages.
    */
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    icon: [{ url: `${assetBase}/icon.png`, type: "image/png" }],
+    apple: [{ url: `${assetBase}/apple-icon.png`, type: "image/png" }],
   },
 };
 
