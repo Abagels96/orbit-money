@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orbit Money
 
-## Getting Started
+Portfolio-style financial UI demo: mock data in the repo, **no backend**, preferences and ledger state in **localStorage**. Dark-first design with **light**, **dark**, and **system** themes.
 
-First, run the development server:
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router) · React · TypeScript
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [Zustand](https://github.com/pmndrs/zustand) for client state and prefs
+- [React Hook Form](https://react-hook-form.com) + [Zod](https://zod.dev)
+
+Project conventions for this repo are in [`AGENTS.md`](./AGENTS.md).
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The app runs at the site root in dev (no URL prefix).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # static export (see below)
+npm run lint
+```
 
-## Learn More
+## GitHub Pages
 
-To learn more about Next.js, take a look at the following resources:
+The site is built as a **static export** and deployed with **GitHub Actions** to a **project site** URL:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`https://<username>.github.io/<repository-name>/`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Configuration:
 
-## Deploy on Vercel
+- **`next.config.ts`** — `output: "export"`, `basePath` from **`NEXT_PUBLIC_BASE_PATH`** (must match the repo name for the default GitHub Pages URL).
+- **`.github/workflows/deploy-github-pages.yml`** — sets `NEXT_PUBLIC_BASE_PATH` to `/<repository name>` and uploads the `out/` folder. Adds **`out/.nojekyll`** so GitHub Pages does not ignore the `_next` assets.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**One-time setup on GitHub:** Repository **Settings → Pages → Build and deployment → Source:** **GitHub Actions** (not “Deploy from a branch”), or deployment from the workflow will fail.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To sanity-check a production build locally (same base path as CI):
+
+```powershell
+$env:NEXT_PUBLIC_BASE_PATH="/orbit-money"; npm run build
+```
+
+Serve the `out/` directory with any static file server and open the matching subpath.
+
+## Themes
+
+- **Header** and **Settings** include **Light**, **Dark**, and **System** (follows `prefers-color-scheme`).
+- Choice is stored under the `orbit-money-prefs` key in localStorage.
+- **Obsidian / Aurora** under Settings adjusts atmosphere (CSS variables) on top of the active theme.
+
+## License / credits
+
+See the repository owner and footer in the app for attribution.
