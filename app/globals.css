@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (toggle via `dark` on <html> from `OrbitPrefsSync`). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme (default) */
 :root {
+  --orbit-bg: #f4f6fb;
+  --orbit-surface: rgba(255, 255, 255, 0.92);
+  --orbit-border: rgba(15, 23, 42, 0.08);
+  --orbit-accent: #0d9488;
+  --orbit-accent-dim: rgba(13, 148, 136, 0.12);
+  --orbit-ink: #0f172a;
+  --orbit-muted: #64748b;
+  --orbit-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --orbit-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark theme */
+.dark {
   --orbit-bg: #05070d;
   --orbit-surface: rgba(255, 255, 255, 0.04);
   --orbit-border: rgba(255, 255, 255, 0.08);
@@ -8,8 +25,16 @@
   --orbit-accent-dim: rgba(94, 234, 212, 0.12);
   --orbit-ink: #e2e8f0;
   --orbit-muted: #94a3b8;
-  --orbit-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --orbit-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark sub-atmosphere */
+.dark[data-orbit-appearance="ambient"] {
+  --orbit-bg: #070b14;
+}
+
+/* Light sub-atmosphere — slightly cooler canvas */
+:root[data-orbit-appearance="ambient"] {
+  --orbit-bg: #eef1f8;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -19,13 +44,13 @@
 }
 
 ::selection {
-  background: rgba(45, 212, 191, 0.22);
-  color: #f8fafc;
+  background: rgba(13, 148, 136, 0.22);
+  color: #0f172a;
 }
 
-/* Mock appearance: slightly lifted canvas (see Settings). */
-:root[data-orbit-appearance="ambient"] {
-  --orbit-bg: #070b14;
+.dark ::selection {
+  background: rgba(45, 212, 191, 0.22);
+  color: #f8fafc;
 }
 
 @theme inline {
@@ -39,6 +64,7 @@ html {
 
 body {
   min-height: 100%;
+  min-height: 100dvh;
   background: var(--orbit-bg);
   color: var(--orbit-ink);
   font-family: var(--font-geist-sans), system-ui, sans-serif;

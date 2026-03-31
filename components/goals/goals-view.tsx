@@ -58,7 +58,7 @@ function GoalOrbCard({
     <GlassCard
       padding="lg"
       interactive
-      className="group relative overflow-hidden border-white/[0.08]"
+      className="group relative overflow-hidden border-slate-200/90 dark:border-white/[0.08]"
       style={{
         boxShadow: `inset 0 0 0 1px ${goal.color}28, 0 0 48px -20px ${goal.color}40`,
       }}
@@ -79,7 +79,7 @@ function GoalOrbCard({
           >
             <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-[#070a10]/95 ring-1 ring-white/[0.06]">
               <span
-                className="font-mono text-3xl font-semibold tabular-nums text-white"
+                className="font-mono text-3xl font-semibold tabular-nums text-slate-900 dark:text-white"
                 style={{ textShadow: `0 0 24px ${goal.color}55` }}
               >
                 {pct.toFixed(0)}%
@@ -94,7 +94,7 @@ function GoalOrbCard({
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <h2 className="text-lg font-semibold tracking-tight text-white">
+              <h2 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
                 {goal.name}
               </h2>
               <p className="mt-1 font-mono text-xs text-slate-500">
@@ -229,14 +229,14 @@ function ConfirmDeleteModal({
       <GlassCard
         glow="teal"
         padding="lg"
-        className="relative z-[111] max-w-md border-white/[0.1]"
+        className="relative z-[111] max-w-md border-slate-200/90 dark:border-white/[0.1]"
         role="dialog"
         aria-modal="true"
         aria-labelledby="goal-delete-title"
       >
         <h2
           id="goal-delete-title"
-          className="text-lg font-semibold text-white"
+          className="text-lg font-semibold text-slate-900 dark:text-white"
         >
           Delete goal?
         </h2>

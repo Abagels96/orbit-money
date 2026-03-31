@@ -28,7 +28,7 @@ export function TransactionEditClient({ id }: Props) {
       <>
         <Link
           href="/transactions"
-          className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors duration-200 hover:text-teal-300"
+          className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-600 transition-colors duration-200 hover:text-teal-800 dark:text-slate-400 dark:hover:text-teal-300"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden />
           Back to transactions
@@ -39,7 +39,7 @@ export function TransactionEditClient({ id }: Props) {
           action={
             <Link
               href="/transactions"
-              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-gradient-to-b from-teal-400/20 to-teal-500/10 px-5 py-2.5 text-sm font-medium text-teal-50 ring-1 ring-teal-400/30 shadow-[0_0_28px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-px hover:from-teal-400/30 hover:to-teal-500/15 hover:shadow-[0_0_36px_-4px_rgba(45,212,191,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/70 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-gradient-to-b from-teal-500/25 to-teal-600/15 px-5 py-2.5 text-sm font-medium text-teal-950 ring-1 ring-teal-500/40 shadow-[0_0_28px_-6px_rgba(13,148,136,0.3)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-px hover:from-teal-500/35 hover:to-teal-600/22 hover:shadow-[0_0_36px_-4px_rgba(13,148,136,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600/70 active:scale-[0.98] dark:from-teal-400/20 dark:to-teal-500/10 dark:text-teal-50 dark:ring-teal-400/30 dark:shadow-[0_0_28px_-6px_rgba(45,212,191,0.35)] dark:hover:from-teal-400/30 dark:hover:to-teal-500/15 dark:hover:shadow-[0_0_36px_-4px_rgba(45,212,191,0.45)] dark:focus-visible:outline-teal-400/70"
             >
               Back to ledger
             </Link>
@@ -53,19 +53,19 @@ export function TransactionEditClient({ id }: Props) {
     <>
       <Link
         href="/transactions"
-        className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 transition hover:text-teal-300"
+        className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-600 transition hover:text-teal-800 dark:text-slate-400 dark:hover:text-teal-300"
       >
         <ArrowLeft className="h-4 w-4" aria-hidden />
         Back to transactions
       </Link>
       <header className="mb-8">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-400/85">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-700/90 dark:text-teal-400/85">
           Revise
         </p>
-        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
           Edit transaction
         </h1>
-        <p className="mt-1 max-w-xl text-sm text-slate-500">
+        <p className="mt-1 max-w-xl text-sm text-slate-600 dark:text-slate-500">
           Update a line in your local ledger — changes persist in the browser only.
         </p>
       </header>

@@ -80,24 +80,24 @@ export function TransactionForm({
     <GlassCard
       glow="teal"
       padding="lg"
-      className="relative max-w-2xl overflow-hidden border-white/[0.1]"
+      className="relative max-w-2xl overflow-hidden border-slate-200/90 dark:border-white/[0.1]"
     >
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-teal-500/10 blur-3xl"
         aria-hidden
       />
-      <div className="relative flex items-start gap-3 border-b border-white/[0.06] pb-5">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-400/25 to-indigo-500/20 ring-1 ring-white/10">
-          <Sparkles className="h-5 w-5 text-teal-200" aria-hidden />
+      <div className="relative flex items-start gap-3 border-b border-slate-200/80 pb-5 dark:border-white/[0.06]">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-400/30 to-indigo-500/20 ring-1 ring-slate-200/90 dark:from-teal-400/25 dark:ring-white/10">
+          <Sparkles className="h-5 w-5 text-teal-700 dark:text-teal-200" aria-hidden />
         </span>
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-400/85">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-700/90 dark:text-teal-400/85">
             Ledger composer
           </p>
-          <h2 className="mt-1 text-lg font-semibold text-white">
+          <h2 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
             {mode === "create" ? "New line" : "Edit line"}
           </h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-600 dark:text-slate-500">
             Validated locally — persists to your browser via the finance store.
           </p>
         </div>
@@ -156,21 +156,21 @@ export function TransactionForm({
           {...register("account")}
         />
         <div>
-          <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-slate-400">
+          <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-slate-600 dark:text-slate-400">
             Note
           </label>
           <textarea
             className={cn(
-              "min-h-[96px] w-full rounded-3xl border border-white/[0.1] bg-white/[0.04] px-4 py-3 text-sm text-slate-100 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] placeholder:text-slate-600",
-              "focus:border-teal-400/35 focus:outline-none focus:ring-2 focus:ring-teal-400/25",
-              errors.note && "border-rose-400/40"
+              "min-h-[96px] w-full rounded-3xl border border-slate-300/90 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9)] placeholder:text-slate-400 dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-slate-100 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] dark:placeholder:text-slate-600",
+              "focus:border-teal-500/45 focus:outline-none focus:ring-2 focus:ring-teal-500/25 dark:focus:border-teal-400/35 dark:focus:ring-teal-400/25",
+              errors.note && "border-rose-400/50 dark:border-rose-400/40"
             )}
             placeholder="Optional context"
             rows={3}
             {...noteRegister}
           />
           {errors.note ? (
-            <p className="mt-1.5 text-xs text-rose-400" role="alert">
+            <p className="mt-1.5 text-xs text-rose-600 dark:text-rose-400" role="alert">
               {errors.note.message}
             </p>
           ) : null}
@@ -179,15 +179,15 @@ export function TransactionForm({
           name="recurring"
           control={control}
           render={({ field }) => (
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-3">
+            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-slate-200/90 bg-slate-50/80 px-4 py-3 dark:border-white/[0.08] dark:bg-white/[0.03]">
               <input
                 type="checkbox"
                 checked={field.value}
                 onChange={field.onChange}
                 onBlur={field.onBlur}
-                className="h-4 w-4 rounded border-white/20 bg-white/10 text-teal-500 focus:ring-teal-400/50"
+                className="h-4 w-4 rounded border-slate-300/90 bg-white text-teal-600 focus:ring-teal-500/50 dark:border-white/20 dark:bg-white/10 dark:text-teal-500 dark:focus:ring-teal-400/50"
               />
-              <span className="text-sm text-slate-300">Recurring</span>
+              <span className="text-sm text-slate-700 dark:text-slate-300">Recurring</span>
             </label>
           )}
         />

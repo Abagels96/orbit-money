@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppShell } from "@/components/layout/app-shell";
 import { OrbitPrefsSync } from "@/components/layout/orbit-prefs-sync";
+import { ThemeInitScript } from "@/components/layout/theme-init-script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,6 +16,16 @@ const geistMono = Geist_Mono({
 });
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f6fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#05070d" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: {
@@ -40,9 +51,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans text-slate-100 antialiased">
+      <body className="flex min-h-full flex-col font-sans text-slate-900 antialiased dark:text-slate-100">
+        <ThemeInitScript />
         <OrbitPrefsSync />
         <AppShell>{children}</AppShell>
       </body>

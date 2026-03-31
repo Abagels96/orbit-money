@@ -106,7 +106,7 @@ export function TransactionsView() {
 
   return (
     <div className="space-y-7 sm:space-y-8">
-      <GlassCard padding="md" className="border-white/[0.08]">
+      <GlassCard padding="md" className="border-slate-200/90 dark:border-white/[0.08]">
         <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-4">
             <Input
@@ -171,7 +171,7 @@ export function TransactionsView() {
           action={
             <Link
               href="/transactions/new"
-              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-gradient-to-b from-teal-400/20 to-teal-500/10 px-5 py-2.5 text-sm font-medium text-teal-50 ring-1 ring-teal-400/30 shadow-[0_0_28px_-6px_rgba(45,212,191,0.35)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-px hover:from-teal-400/30 hover:to-teal-500/15 hover:shadow-[0_0_36px_-4px_rgba(45,212,191,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/70 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-gradient-to-b from-teal-500/25 to-teal-600/15 px-5 py-2.5 text-sm font-medium text-teal-950 ring-1 ring-teal-500/40 shadow-[0_0_28px_-6px_rgba(13,148,136,0.3)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-px hover:from-teal-500/35 hover:to-teal-600/22 hover:shadow-[0_0_36px_-4px_rgba(13,148,136,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600/70 active:scale-[0.98] dark:from-teal-400/20 dark:to-teal-500/10 dark:text-teal-50 dark:ring-teal-400/30 dark:shadow-[0_0_28px_-6px_rgba(45,212,191,0.35)] dark:hover:from-teal-400/30 dark:hover:to-teal-500/15 dark:hover:shadow-[0_0_36px_-4px_rgba(45,212,191,0.45)] dark:focus-visible:outline-teal-400/70"
             >
               New transaction
             </Link>
@@ -182,24 +182,24 @@ export function TransactionsView() {
           {grouped.map(({ date, items }) => (
             <section key={date} aria-labelledby={`date-${date}`}>
               <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-teal-400/90">
+                <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-slate-200/90 bg-white/90 text-teal-700 dark:border-white/10 dark:bg-white/[0.05] dark:text-teal-400/90">
                   <CalendarClock className="h-4 w-4" aria-hidden />
                 </span>
                 <div>
                   <h2
                     id={`date-${date}`}
-                    className="font-mono text-sm font-medium text-white"
+                    className="font-mono text-sm font-medium text-slate-900 dark:text-white"
                   >
                     {date}
                   </h2>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-600 dark:text-slate-500">
                     {items.length} line{items.length === 1 ? "" : "s"}
                   </p>
                 </div>
               </div>
               <div className="relative pl-4 sm:pl-6">
                 <div
-                  className="pointer-events-none absolute left-[11px] top-3 bottom-3 w-px bg-gradient-to-b from-teal-400/40 via-white/10 to-transparent sm:left-[15px]"
+                  className="pointer-events-none absolute left-[11px] top-3 bottom-3 w-px bg-gradient-to-b from-teal-500/50 via-slate-300/50 to-transparent dark:from-teal-400/40 dark:via-white/10 sm:left-[15px]"
                   aria-hidden
                 />
                 <ul className="space-y-3">
@@ -209,14 +209,14 @@ export function TransactionsView() {
                         padding="md"
                         glow="none"
                         interactive
-                        className="relative ml-2 border-white/[0.08] hover:border-teal-400/22 hover:shadow-[0_0_36px_-14px_rgba(45,212,191,0.22)] sm:ml-4"
+                        className="relative ml-2 border-slate-200/90 hover:border-teal-500/35 hover:shadow-[0_0_36px_-14px_rgba(13,148,136,0.18)] dark:border-white/[0.08] dark:hover:border-teal-400/22 dark:hover:shadow-[0_0_36px_-14px_rgba(45,212,191,0.22)] sm:ml-4"
                       >
                         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                           <div className="min-w-0 flex-1 space-y-2">
                             <div className="flex flex-wrap items-center gap-2">
                               <Link
                                 href={`/transactions/${tx.id}`}
-                                className="truncate text-base font-semibold text-white transition-colors duration-200 hover:text-teal-200/95"
+                                className="truncate text-base font-semibold text-slate-900 transition-colors duration-200 hover:text-teal-800 dark:text-white dark:hover:text-teal-200/95"
                               >
                                 {tx.title}
                               </Link>
@@ -229,15 +229,15 @@ export function TransactionsView() {
                                 </Badge>
                               ) : null}
                             </div>
-                            <p className="text-sm text-slate-500">
+                            <p className="text-sm text-slate-600 dark:text-slate-500">
                               {tx.category}
-                              <span className="text-slate-600"> · </span>
+                              <span className="text-slate-400 dark:text-slate-600"> · </span>
                               <span className="font-mono text-xs text-slate-500">
                                 {tx.account}
                               </span>
                             </p>
                             {tx.note ? (
-                              <p className="text-sm italic text-slate-500 line-clamp-2">
+                              <p className="text-sm italic text-slate-600 line-clamp-2 dark:text-slate-500">
                                 {tx.note}
                               </p>
                             ) : null}
@@ -247,8 +247,8 @@ export function TransactionsView() {
                               className={cn(
                                 "font-mono text-lg tabular-nums",
                                 tx.amount >= 0
-                                  ? "text-emerald-300"
-                                  : "text-slate-100"
+                                  ? "text-emerald-700 dark:text-emerald-300"
+                                  : "text-slate-800 dark:text-slate-100"
                               )}
                             >
                               {!mounted
@@ -262,8 +262,8 @@ export function TransactionsView() {
                               <Link
                                 href={`/transactions/${tx.id}`}
                                 className={cn(
-                                  "inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-transparent text-slate-200 ring-1 ring-white/10 transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-white/[0.1] hover:ring-white/16",
-                                  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/60"
+                                  "inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-transparent text-slate-700 ring-1 ring-slate-200/90 transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-slate-100 hover:ring-slate-300/90 dark:text-slate-200 dark:ring-white/10 dark:hover:bg-white/[0.1] dark:hover:ring-white/16",
+                                  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600/60 dark:focus-visible:outline-teal-400/60"
                                 )}
                                 aria-label={`Edit ${tx.title}`}
                               >

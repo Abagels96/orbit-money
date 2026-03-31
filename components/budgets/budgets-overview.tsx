@@ -53,8 +53,8 @@ function BudgetRing({
           aria-hidden
         />
       ) : null}
-      <div className="relative flex h-[78%] w-[78%] flex-col items-center justify-center rounded-full border border-white/[0.08] bg-[#0a0e14]/90">
-        <span className="font-mono text-2xl font-semibold tabular-nums text-white sm:text-3xl">
+      <div className="relative flex h-[78%] w-[78%] flex-col items-center justify-center rounded-full border border-slate-200/90 bg-white/90 dark:border-white/[0.08] dark:bg-[#0a0e14]/90">
+        <span className="font-mono text-2xl font-semibold tabular-nums text-slate-900 dark:text-white sm:text-3xl">
           {limit > 0 ? `${Math.round(pct)}` : "—"}
         </span>
         <span className="text-[10px] font-medium uppercase tracking-wider text-slate-500">
@@ -111,7 +111,7 @@ function BudgetCard({
       padding="lg"
       interactive
       className={cn(
-        "flex flex-col items-stretch gap-6 border-white/[0.08]",
+        "flex flex-col items-stretch gap-6 border-slate-200/90 dark:border-white/[0.08]",
         over && "ring-1 ring-rose-400/25"
       )}
     >
@@ -120,7 +120,7 @@ function BudgetCard({
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
             Zone
           </p>
-          <h2 className="mt-1 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+          <h2 className="mt-1 text-xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
             {budget.category}
           </h2>
         </div>
@@ -155,7 +155,7 @@ function BudgetCard({
                 onBlur={commit}
                 onKeyDown={(e) => e.key === "Enter" && (e.target as HTMLInputElement).blur()}
                 className={cn(
-                  "w-full rounded-2xl border border-white/[0.1] bg-white/[0.05] px-3 py-2.5 font-mono text-sm text-white placeholder:text-slate-600",
+                  "w-full rounded-2xl border border-slate-300/90 bg-white px-3 py-2.5 font-mono text-sm text-slate-900 placeholder:text-slate-400 dark:border-white/[0.1] dark:bg-white/[0.05] dark:text-white dark:placeholder:text-slate-600",
                   "focus:border-teal-400/40 focus:outline-none focus:ring-2 focus:ring-teal-400/20"
                 )}
                 aria-label={`${budget.category} limit`}
@@ -173,7 +173,7 @@ function BudgetCard({
                 onBlur={commit}
                 onKeyDown={(e) => e.key === "Enter" && (e.target as HTMLInputElement).blur()}
                 className={cn(
-                  "w-full rounded-2xl border border-white/[0.1] bg-white/[0.05] px-3 py-2.5 font-mono text-sm text-white placeholder:text-slate-600",
+                  "w-full rounded-2xl border border-slate-300/90 bg-white px-3 py-2.5 font-mono text-sm text-slate-900 placeholder:text-slate-400 dark:border-white/[0.1] dark:bg-white/[0.05] dark:text-white dark:placeholder:text-slate-600",
                   "focus:border-teal-400/40 focus:outline-none focus:ring-2 focus:ring-teal-400/20",
                   over && "border-rose-400/30 focus:border-rose-400/45 focus:ring-rose-400/15"
                 )}
@@ -251,13 +251,13 @@ export function BudgetsOverview() {
         description="Edit ceilings and burn directly — values live in your local finance store."
       />
 
-      <GlassCard padding="md" glow="indigo" className="border-white/[0.08]">
+      <GlassCard padding="md" glow="indigo" className="border-slate-200/90 dark:border-white/[0.08]">
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
               Total ceiling
             </p>
-            <p className="mt-1 font-mono text-xl tabular-nums text-white">
+            <p className="mt-1 font-mono text-xl tabular-nums text-slate-900 dark:text-white">
               {!mounted ? "—" : formatCurrency(totalLimit, { hide })}
             </p>
           </div>

@@ -54,12 +54,12 @@ export function GoalForm({
   const watchColor = useWatch({ control, name: "color" });
 
   return (
-    <GlassCard glow="teal" padding="lg" className="max-w-lg border-white/[0.1]">
-      <div className="border-b border-white/[0.06] pb-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-400/85">
+    <GlassCard glow="teal" padding="lg" className="max-w-lg border-slate-200/90 dark:border-white/[0.1]">
+      <div className="border-b border-slate-200/80 pb-4 dark:border-white/[0.06]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-700/90 dark:text-teal-400/85">
           {mode === "create" ? "New vector" : "Revise vector"}
         </p>
-        <h2 className="mt-1 text-lg font-semibold text-white">
+        <h2 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
           {mode === "create" ? "Add savings goal" : "Edit goal"}
         </h2>
       </div>
